@@ -2,18 +2,18 @@ package br.com.pessoa.servicos;
 
 public class Util {
 
-    public static boolean verificarCampoNull(String campo){
+    public static boolean verificarCampoNaoNull(String campo){
         if(campo != null
             && !campo.isEmpty())
             return true;
         return false;
     }
 
-    public static boolean verificaAltura(Double altura){
+    public static boolean verificaAlturaPreenchida(Double altura){
         return altura != null? true : false;
     }
 
-    public static boolean verificaIdade(Long idade){
+    public static boolean verificaIdadePreenchida(Long idade){
         return idade != null? true : false;
     }
 }

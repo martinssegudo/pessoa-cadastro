@@ -1,5 +1,6 @@
 package br.com.pessoa.apis;
 
+import br.com.pessoa.exceptions.PessoaException;
 import br.com.pessoa.repositorios.entidades.Pessoa;
 import br.com.pessoa.servicos.PessoaServico;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,13 @@ public class ApiPessoa {
 
 
     @GetMapping
-    public List<Pessoa> listarTodos(){
+    public List<Pessoa> listarTodos() throws PessoaException {
         return pessoaServico.listarTodos();
+    }
+
+
+    @DeleteMapping(value = "/delete/{id}")
+    public void deletaPorId(@PathVariable("id") Long idPessoa) throws PessoaException {
+        pessoaServico.deletaPessoa(idPessoa);
     }
 }

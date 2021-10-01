@@ -35,6 +35,17 @@ public class Pessoa {
     @Column(name = "TP_SEXO")
     private boolean sexo;
 
+
+    public Pessoa(){}
+
+    public Pessoa(String nome,
+                  Long idade,
+                  Double altura){
+        this.nome = nome;
+        this.idade = idade;
+        this.altura = altura;
+    }
+
     public Long getId() {
         return id;
     }
